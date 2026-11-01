@@ -1,0 +1,420 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #222;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+
+/* ==========================================
+   FORM AND FILTERS
+========================================== */
+
+.task-form,
+.filters {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-form h2,
+.filters h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#taskInput,
+#descriptionInput,
+select,
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+}
+
+#taskInput:focus,
+#descriptionInput:focus,
+select:focus,
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 4px rgba(37, 99, 235, 0.25);
+}
+
+#descriptionInput {
+    height: 90px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row > div {
+    flex: 1;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 4px;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ADD TASK BUTTON */
+
+.add-btn {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* FILTER BUTTONS */
+
+.filters button {
+    background: #e5e7eb;
+    color: #222;
+}
+
+.filters button:hover {
+    background: #d1d5db;
+}
+
+
+/* ==========================================
+   TASK CARDS
+========================================== */
+
+.task {
+    background: white;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #2563eb;
+    transition: box-shadow 0.2s;
+}
+
+.task:hover {
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+}
+
+.task-content h3 {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #1e3a8a;
+}
+
+.task-content p {
+    line-height: 1.5;
+    margin: 9px 0;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+/* ==========================================
+   TASK BUTTONS
+========================================== */
+
+.task-buttons {
+    margin-top: 15px;
+}
+
+.task-buttons button:nth-child(1) {
+    background: #16a34a;
+    color: white;
+}
+
+.task-buttons button:nth-child(1):hover {
+    background: #15803d;
+}
+
+.task-buttons button:nth-child(2) {
+    background: #f59e0b;
+    color: white;
+}
+
+.task-buttons button:nth-child(2):hover {
+    background: #d97706;
+}
+
+.task-buttons button:nth-child(3) {
+    background: #dc2626;
+    color: white;
+}
+
+.task-buttons button:nth-child(3):hover {
+    background: #b91c1c;
+}
+
+
+/* ==========================================
+   SUBTASK SECTION
+========================================== */
+
+.subtasks-section {
+    margin-top: 18px;
+    padding: 18px;
+    background: #f1f5ff;
+    border-radius: 10px;
+    border: 1px solid #dbeafe;
+}
+
+.subtasks-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1e40af;
+    font-size: 17px;
+}
+
+
+/* SUBTASK INPUT */
+
+.subtask-input {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.subtask-input input {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.subtask-input button {
+    background: #2563eb;
+    color: white;
+    margin: 0;
+}
+
+.subtask-input button:hover {
+    background: #1d4ed8;
+}
+
+
+/* SUBTASK LIST */
+
+.subtask-list {
+    margin-top: 10px;
+}
+
+.subtask-list > p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* INDIVIDUAL SUBTASK */
+
+.subtask-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+}
+
+.subtask-item label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: 1;
+    min-width: 150px;
+    font-weight: normal;
+}
+
+.subtask-item input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.subtask-item span {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.subtask-item span.completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+
+/* SUBTASK EDIT AND DELETE */
+
+.subtask-item button {
+    padding: 7px 11px;
+    margin: 2px;
+    font-size: 13px;
+}
+
+.subtask-item button:nth-of-type(1) {
+    background: #f59e0b;
+    color: white;
+}
+
+.subtask-item button:nth-of-type(1):hover {
+    background: #d97706;
+}
+
+.subtask-item button:nth-of-type(2) {
+    background: #dc2626;
+    color: white;
+}
+
+.subtask-item button:nth-of-type(2):hover {
+    background: #b91c1c;
+}
+
+
+/* ==========================================
+   TASK SEPARATOR
+========================================== */
+
+.task-content hr {
+    border: none;
+    border-top: 1px solid #d1d5db;
+    margin: 20px 0;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .task-form,
+    .filters {
+        padding: 18px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .task {
+        padding: 16px;
+    }
+
+    .subtasks-section {
+        padding: 12px;
+    }
+
+    .subtask-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .subtask-input input {
+        width: 100%;
+    }
+
+    .subtask-input button {
+        width: 100%;
+    }
+
+    .subtask-item {
+        justify-content: flex-start;
+    }
+
+}

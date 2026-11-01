@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>☁️ Cloud Task Manager</h1>
+        <p>Organize your tasks easily</p>
+    </header>
+
+    <main>
+
+        <!-- ADD MAIN TASK -->
+        <section class="task-form">
+
+            <h2>Add New Task</h2>
+
+            <input type="text" id="taskInput" placeholder="Enter task title">
+
+            <textarea id="descriptionInput" placeholder="Enter task description"></textarea>
+
+            <div class="form-row">
+
+                <div>
+                    <label>Due Date</label>
+                    <input type="date" id="dueDateInput">
+                </div>
+
+                <div>
+                    <label>Priority</label>
+
+                    <select id="priorityInput">
+                        <option value="Low">Low</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button class="add-btn" onclick="addTask()">
+                + Add Task
+            </button>
+
+        </section>
+
+
+        <!-- FILTERS -->
+        <section class="filters">
+
+            <h2>Filter Tasks</h2>
+
+            <button onclick="filterByStatus('all')">
+                All
+            </button>
+
+            <button onclick="filterByStatus('pending')">
+                Pending
+            </button>
+
+            <button onclick="filterByStatus('completed')">
+                Completed
+            </button>
+
+            <select id="priorityFilter" onchange="filterByPriority(this.value)">
+                <option value="all">All Priorities</option>
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+
+        </section>
+
+
+        <!-- TASK LIST -->
+        <section>
+
+            <h2>My Tasks</h2>
+
+            <div id="taskList"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
